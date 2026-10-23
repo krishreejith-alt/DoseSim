@@ -4,3 +4,7 @@ __pycache__/
 .venv/
 # Local run logs (large, regenerated)
 runs/
+# Private: reference answers + full gate report (contain solutions). Regenerate with scripts.check_tasks
+tasks/vanc_solutions.json
+tasks/vanc_check_report.json
+grade.json

@@ -96,9 +96,11 @@ class DoseEnv:
 
     # ---------- tools the agent can call ----------
     def get_labs(self, day: int) -> dict:
-        """Labs available up to and including `day`. Never shows the future."""
-        if not 0 <= day < self.n_days:
-            return self._record("get_labs", {"day": day}, {"error": "day out of range"})
+        """Labs available up to and including `day`. Never shows the future:
+        `day` can't be later than today's decision day (= number of days already submitted)."""
+        today = min(len(self.submissions), self.n_days - 1)
+        if not 0 <= day <= today:
+            return self._record("get_labs", {"day": day}, {"error": f"labs only available up to day {today}"})
         p = self.task["patient"]
         labs = {
             "age_yr": p["age_yr"], "sex": p["sex"], "weight_kg": p["weight_kg"],

@@ -1,0 +1,8 @@
+# Core: simulator + environment
+numpy>=2.0
+scipy>=1.13
+# MCP tool server
+mcp>=2.3,<3
+# Tests
+pytest>=8
+# Optional, only for scripts/run_model.py:  pip install anthropic openai

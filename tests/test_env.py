@@ -14,6 +14,7 @@ def load(tid):
 
 def test_labs_never_show_future_creatinine():
     env = load("0002")  # creatinine rises each day
+    env.submit_dose(0, 1000, 12, "")
     assert env.get_labs(1)["scr_mg_dl_by_day"] == env.task["patient"]["scr_by_day"][:2]
 
 
@@ -97,3 +98,10 @@ def test_simulate_tool_uses_population_model_only():
     a = env.simulate(1000, 12, 3)
     env.task["hidden"]["eta"] = {}
     assert env.simulate(1000, 12, 3) == a
+
+
+def test_cannot_request_future_days_labs():
+    env = load("0002")
+    assert "error" in env.get_labs(3)          # day 0: day 3 labs don't exist yet
+    env.submit_dose(0, 1000, 12, "")
+    assert "error" not in env.get_labs(1)      # day 1 is now today

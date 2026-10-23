@@ -124,11 +124,12 @@ Loading dose in the paper: <60 kg 1000 mg; 60–90 kg 1500 mg; >90 kg 2000 mg.
 
 ## 4. Open issues (must close before tasks ship)
 
-1. **Q unit.** Paper's Table 2 prints "h-1"; InsightRX treats Q as L/h. Physically, an
-   inter-compartmental clearance is L/h. Plan: simulate both and keep the one that
-   reproduces the paper's reported AUC24 and trough results (Section 3). Log the result in
-   `VALIDATION.md`.
+1. **Q unit.** Paper's Table 2 prints "h-1"; InsightRX treats Q as L/h. Tested both (VALIDATION.md §4):
+   the paper's numbers can't separate them. Using L/h; quality gate 5 makes every task's verdict
+   identical under both readings. Still open for an expert.
 2. **Safety threshold.** The AUC level linked to kidney injury is not yet sourced.
    Spec's safety check stays disabled until it is.
 3. **Guideline full text.** Confirm the 400–600 target and MIC assumption directly in Rybak 2020.
 4. **Expert review.** None yet. All tasks marked `reviewed_by: pending`.
+5. **Loading-dose limit** (20–35 mg/kg, max 3000 mg) is from a secondary summary (DoseMeRx) of Rybak 2020.
+   Confirm in the guideline's full text.

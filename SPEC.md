@@ -1,4 +1,4 @@
-# DoseSim Environment Spec — v0.1 (draft)
+# DoseSim Environment Spec — v0.1
 
 Status: draft for review. Owner: Shreejith. Last updated: 2026-10-23.
 
@@ -59,20 +59,23 @@ One JSON file per task. Every field is required unless marked optional.
 ## 4. Tools (MCP interface)
 | Tool | What it does |
 |---|---|
-| `get_labs(day)` | Returns that day's lab values from the timeline |
-| `simulate(dose_mg, interval_h, days)` | Runs the PK model, returns predicted drug levels |
-| `submit_dose(day, dose_mg, interval_h, rationale)` | Locks in the decision for that day |
+| `get_labs(day)` | Labs up to `day` (never later than today), incl. resulted drug levels |
+| `simulate(dose_mg, interval_h, days, loading_dose_mg?)` | Population-model what-if. Doesn't know the hidden patient |
+| `submit_dose(day, dose_mg, interval_h, rationale, loading_dose_mg?)` | Locks in the regimen from that day on |
 
-Agents may call `simulate` freely. Only `submit_dose` is graded.
+Agents may call `simulate` freely. Only `submit_dose` is graded. Definitions: `dosesim/tools.py`.
+
+Schedule rules (v0): intervals 8, 12 or 24 h. A changed regimen's next dose = later of day start and
+last dose + new interval (no hidden extra doses). Loading dose day 0 only, max 35 mg/kg and 3000 mg.
 
 ## 5. Grading (reward)
 Reward is 0 to 1, built from parts so labs can see why a score was given:
 
 | Part | Weight | Pass condition |
 |---|---|---|
-| In target range | 0.6 | Simulated exposure inside `target_range` on every graded day |
-| Safety | 0.3 | No day above the toxicity threshold (hard fail = total reward 0) |
-| Rationale | 0.1 | Mentions the key driver (e.g. kidney function change). Rubric-checked |
+| In target range | 0.6 | Share of graded days with true-patient AUC24 inside `target_range` (day 0 not graded) |
+| Safety | 0.3 | **OFF in v0** (no sourced toxicity threshold). Weights rescaled: range 0.857, rationale 0.143 |
+| Rationale | 0.1 | Mentions each required idea (keyword groups). Crude; v0 only |
 
 Rules:
 - Grader is deterministic: same inputs, same score.
@@ -88,19 +91,24 @@ Rules:
 ## 7. Quality gates (a task ships only if all pass)
 1. Every fact has a citation in `provenance.sources`.
 2. Patient sits inside the grader model's validated ranges.
-3. At least one correct answer exists and the grader accepts it.
-4. A known wrong answer exists and the grader rejects it.
-5. Not copied or paraphrased from a public benchmark.
-6. Expert review logged (sampled: 100% of first 50 tasks, then 10%).
+3. A correct answer exists: an oracle that knows the hidden patient scores a perfect range score.
+4. A lazy answer fails: textbook regimen fixed on day 0 scores < 1 (not required for `easy` tasks).
+5. Q-unit robust: oracle verdict identical under both Q readings; lazy answer fails under both.
+6. Not copied or paraphrased from a public benchmark.
+7. Expert review logged (sampled: 100% of first 50 tasks, then 10%). Reported, not blocking, until a reviewer exists.
+
+Automated in `scripts/check_tasks.py`.
 
 ## 8. Grader validation (before any task ships)
-- Reproduce observed drug levels from the source paper. Report error.
-- Reproduce the FDA label's renal dose table direction and size. Report mismatches.
+- Reproduce the source paper's reported results. Report error.
+- Check the source's own dosing table lands in the target range. Report mismatches.
+- (Planned) Compare against the FDA label's renal dosing guidance.
 - Publish results in `VALIDATION.md`. Failures block release.
 
 ## 9. Packaging
 - Core: Docker image with grader, tools and task files. Wrapper-independent.
-- Adapters: `verifiers` (Prime Intellect) first. Buyer formats on request.
+- Done: MCP tool server (`dosesim/mcp_server.py`), runner for Anthropic/OpenAI APIs (`scripts/run_model.py`).
+- Next: `verifiers` (Prime Intellect) adapter. Buyer formats on request.
 - Logs: every tool call, observation and reward saved per run.
 
 ## 10. Documentation
@@ -109,6 +117,7 @@ Rules:
 - `CHANGELOG.md`: every version change.
 
 ## 11. Open questions
-- Which target metric per drug (AUC vs trough)? Decide per drug from guidelines.
+- Safety threshold for vancomycin (AUC linked to kidney injury): needs a primary source.
 - Who is the expert reviewer?
-- Rationale scoring: rubric by model or by keyword check?
+- Rationale scoring: replace keywords with a rubric?
+- Q unit in Thomson 2009 (L/h vs h-1): mitigated by gate 5, still unresolved.
