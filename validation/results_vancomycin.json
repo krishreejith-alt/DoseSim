@@ -1,0 +1,139 @@
+{
+  "reported": {
+    "auc24_mean": 520,
+    "auc24_sd": 124,
+    "trough_mean": 12.2,
+    "trough_sd": 3.4,
+    "pct_auc_over_400": 87
+  },
+  "runs": [
+    {
+      "q_unit": "L/h",
+      "iiv_on": [
+        "CL",
+        "V1"
+      ],
+      "infusion_mg_per_h": 1000.0,
+      "auc24_mean": 405.0508335623853,
+      "auc24_sd": 100.34987724008553,
+      "auc24_day4_mean": 441.5052076089315,
+      "trough_mean": 10.96082038318677,
+      "trough_sd": 3.834783544911971,
+      "pct_auc_over_400_day4": 59.099999999999994,
+      "ss_auc24_mean": 499.3017137775438,
+      "ss_auc24_sd": 149.90016240735417,
+      "pct_ss_auc_over_400": 73.4
+    },
+    {
+      "q_unit": "h-1",
+      "iiv_on": [
+        "CL",
+        "V1"
+      ],
+      "infusion_mg_per_h": 1000.0,
+      "auc24_mean": 394.89408808552196,
+      "auc24_sd": 110.40265103742217,
+      "auc24_day4_mean": 453.7573929110466,
+      "trough_mean": 13.410197908956766,
+      "trough_sd": 4.190473715406606,
+      "pct_auc_over_400_day4": 62.8,
+      "ss_auc24_mean": 499.3017137775438,
+      "ss_auc24_sd": 149.90016240735417,
+      "pct_ss_auc_over_400": 73.4
+    },
+    {
+      "q_unit": "L/h",
+      "iiv_on": [
+        "CL",
+        "V1",
+        "V2",
+        "Q"
+      ],
+      "infusion_mg_per_h": 1000.0,
+      "auc24_mean": 405.57160213495575,
+      "auc24_sd": 112.5356239531855,
+      "auc24_day4_mean": 432.6407679399545,
+      "trough_mean": 11.048812475331124,
+      "trough_sd": 4.407298293581548,
+      "pct_auc_over_400_day4": 58.199999999999996,
+      "ss_auc24_mean": 508.1014247210375,
+      "ss_auc24_sd": 151.70619052756487,
+      "pct_ss_auc_over_400": 76.0
+    },
+    {
+      "q_unit": "L/h",
+      "iiv_on": [
+        "CL",
+        "V1"
+      ],
+      "infusion_mg_per_h": 600.0,
+      "auc24_mean": 404.11531987668843,
+      "auc24_sd": 100.25535084091622,
+      "auc24_day4_mean": 441.4868515755054,
+      "trough_mean": 11.165030925798812,
+      "trough_sd": 3.8505446782394435,
+      "pct_auc_over_400_day4": 59.0,
+      "ss_auc24_mean": 499.3017137775438,
+      "ss_auc24_sd": 149.90016240735417,
+      "pct_ss_auc_over_400": 73.4
+    }
+  ],
+  "table_check": [
+    {
+      "crcl": 16,
+      "dose_mg": 500,
+      "interval_h": 48,
+      "ss_auc24": 348.3,
+      "ss_trough": 11.2
+    },
+    {
+      "crcl": 25,
+      "dose_mg": 500,
+      "interval_h": 24,
+      "ss_auc24": 450.1,
+      "ss_trough": 14.9
+    },
+    {
+      "crcl": 35,
+      "dose_mg": 750,
+      "interval_h": 24,
+      "ss_auc24": 479.2,
+      "ss_trough": 14.5
+    },
+    {
+      "crcl": 47,
+      "dose_mg": 500,
+      "interval_h": 12,
+      "ss_auc24": 472.6,
+      "ss_trough": 15.5
+    },
+    {
+      "crcl": 65,
+      "dose_mg": 750,
+      "interval_h": 12,
+      "ss_auc24": 509.5,
+      "ss_trough": 15.2
+    },
+    {
+      "crcl": 82,
+      "dose_mg": 1000,
+      "interval_h": 12,
+      "ss_auc24": 536.7,
+      "ss_trough": 14.8
+    },
+    {
+      "crcl": 100,
+      "dose_mg": 1250,
+      "interval_h": 12,
+      "ss_auc24": 548.8,
+      "ss_trough": 13.8
+    },
+    {
+      "crcl": 120,
+      "dose_mg": 1500,
+      "interval_h": 12,
+      "ss_auc24": 547.8,
+      "ss_trough": 12.5
+    }
+  ]
+}
