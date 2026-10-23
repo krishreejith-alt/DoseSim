@@ -1,0 +1,123 @@
+{
+  "task_id": "dose-vanc-0010",
+  "version": "0.1.0",
+  "task_type": "decline_plus_level",
+  "difficulty": "hard",
+  "split": "test",
+  "drug": "vancomycin",
+  "patient": {
+    "age_yr": 77,
+    "sex": "F",
+    "weight_kg": 63,
+    "scr_by_day": [
+      1.0,
+      1.4,
+      1.8,
+      2.0,
+      2.0
+    ]
+  },
+  "prompt": "77F, MRSA bacteremia, source unclear (TTE negative, TEE pending). Started on piperacillin-tazobactam empirically before cultures came back, now stopped. Creatinine trending up since admission. A trough is ordered before the day-2 morning dose.\n\nYou are the pharmacist dosing vancomycin for this patient. Target: AUC24 400-600 mg*h/L (MIC assumed 1 mg/L), per our institutional AUC protocol. Each day you get that morning's labs, then you set the regimen that starts that day. Use the tools: get_labs, simulate, submit_dose. Allowed intervals: 8, 12 or 24 h. A loading dose is allowed on day 0 only. This episode runs 5 days (day 0 to day 4).",
+  "tools_allowed": [
+    "get_labs",
+    "simulate",
+    "submit_dose"
+  ],
+  "success": {
+    "metric": "AUC24 (true patient, simulated)",
+    "target_range": [
+      400,
+      600
+    ],
+    "target_source": "Rybak 2020 (see provenance)",
+    "graded_days": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "rationale_keywords": [
+      [
+        "creatinine",
+        "crcl",
+        "renal",
+        "kidney",
+        "aki"
+      ],
+      [
+        "level",
+        "trough",
+        "concentration"
+      ],
+      [
+        "reduc",
+        "lower",
+        "decreas",
+        "hold",
+        "extend"
+      ]
+    ]
+  },
+  "hidden": {
+    "eta": {
+      "CL": -0.15915870870864351,
+      "V1": -0.03755663851477155
+    },
+    "level_draws": [
+      {
+        "time_h": 47.5,
+        "label": "trough before day-2 dose",
+        "prop_error": -0.10274675327883268,
+        "add_error": -0.35300826151689546
+      }
+    ]
+  },
+  "grader": {
+    "model_id": "thomson2009_vanco_2cmt",
+    "model_source": "doi:10.1093/jac/dkp085",
+    "validated_ranges": {
+      "age_yr": [
+        16,
+        97
+      ],
+      "weight_kg": [
+        40,
+        159
+      ],
+      "crcl_ml_min": [
+        12,
+        216
+      ]
+    },
+    "q_unit": "L/h (verdict must match under h-1; see VALIDATION.md)"
+  },
+  "provenance": {
+    "sources": [
+      {
+        "fact": "PK model, parameters, validated covariate ranges",
+        "cite": "Thomson AH et al. J Antimicrob Chemother. 2009;63(5):1050-1057. doi:10.1093/jac/dkp085"
+      },
+      {
+        "fact": "AUC24/MIC target 400-600, MIC 1 mg/L assumed",
+        "cite": "Rybak MJ et al. Am J Health Syst Pharm. 2020;77(11):835-863. doi:10.1093/ajhp/zxaa036"
+      },
+      {
+        "fact": "Creatinine clearance equation (total body weight)",
+        "cite": "Cockcroft DW, Gault MH. Nephron. 1976;16(1):31-41"
+      },
+      {
+        "fact": "Loading dose limit 20-35 mg/kg, max 3000 mg (secondary summary; full text UNVERIFIED)",
+        "cite": "DoseMeRx summary of Rybak 2020: doseme-rx.com/vancomycin/articles/dosing-guidelines-essentials"
+      },
+      {
+        "fact": "Lab error size for drawn levels (additive 1.6 mg/L, proportional 15%)",
+        "cite": "Thomson 2009, Table 2 residual error"
+      }
+    ],
+    "authored_by": "ai_assisted",
+    "author_note": "Scenario and prompt drafted with an AI assistant. Founder check: pending.",
+    "not_from_public_benchmark": true,
+    "reviewed_by": "pending",
+    "review_date": null
+  }
+}

@@ -1,0 +1,851 @@
+[
+  {
+    "task_id": "dose-vanc-0001",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      97.9,
+      97.9,
+      97.9,
+      97.9
+    ],
+    "oracle": {
+      "plan": [
+        [
+          2750,
+          24,
+          2500
+        ],
+        [
+          2750,
+          24,
+          null
+        ],
+        [
+          2750,
+          24,
+          null
+        ],
+        [
+          2750,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        383.9,
+        501.2,
+        550.1,
+        577.7
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          750,
+          8,
+          2000
+        ],
+        [
+          750,
+          8,
+          null
+        ],
+        [
+          750,
+          8,
+          null
+        ],
+        [
+          750,
+          8,
+          null
+        ]
+      ],
+      "auc24": [
+        478.3,
+        440.1,
+        464.4,
+        480.9
+      ],
+      "range_score": 1.0
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0002",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      67.1,
+      46.4,
+      33.5,
+      28.7
+    ],
+    "oracle": {
+      "plan": [
+        [
+          750,
+          12,
+          2000
+        ],
+        [
+          1250,
+          24,
+          null
+        ],
+        [
+          1000,
+          24,
+          null
+        ],
+        [
+          1000,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        517.3,
+        402.0,
+        480.1,
+        552.2
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          500,
+          8,
+          1750
+        ],
+        [
+          500,
+          8,
+          null
+        ],
+        [
+          500,
+          8,
+          null
+        ],
+        [
+          500,
+          8,
+          null
+        ]
+      ],
+      "auc24": [
+        501.0,
+        493.6,
+        630.4,
+        766.8
+      ],
+      "range_score": 0.3333333333333333
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0003",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      42.2,
+      53.3,
+      72.3,
+      92.0
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1750,
+          24,
+          null
+        ],
+        [
+          1750,
+          24,
+          null
+        ],
+        [
+          1750,
+          24,
+          null
+        ],
+        [
+          1750,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        393.2,
+        502.6,
+        498.1,
+        444.8
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          500,
+          12,
+          2250
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        578.6,
+        415.6,
+        354.0,
+        293.5
+      ],
+      "range_score": 0.3333333333333333
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0004",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      20.7,
+      20.7,
+      19.5,
+      20.7
+    ],
+    "oracle": {
+      "plan": [
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          24,
+          null
+        ],
+        [
+          500,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        292.4,
+        495.6,
+        467.7,
+        488.5
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          500,
+          24,
+          1250
+        ],
+        [
+          500,
+          24,
+          null
+        ],
+        [
+          500,
+          24,
+          null
+        ],
+        [
+          500,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        441.2,
+        405.3,
+        443.5,
+        470.6
+      ],
+      "range_score": 1.0
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0005",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      157.1,
+      157.1,
+      157.1,
+      157.1
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1750,
+          8,
+          2500
+        ],
+        [
+          1750,
+          8,
+          null
+        ],
+        [
+          1750,
+          8,
+          null
+        ],
+        [
+          1750,
+          8,
+          null
+        ]
+      ],
+      "auc24": [
+        489.8,
+        497.6,
+        515.5,
+        524.0
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          1750,
+          12,
+          2000
+        ],
+        [
+          1750,
+          12,
+          null
+        ],
+        [
+          1750,
+          12,
+          null
+        ],
+        [
+          1750,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        316.5,
+        331.7,
+        343.7,
+        349.3
+      ],
+      "range_score": 0.0
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0006",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      93.3,
+      93.3,
+      93.3,
+      93.3,
+      93.3
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1750,
+          12,
+          null
+        ],
+        [
+          1750,
+          12,
+          null
+        ],
+        [
+          1750,
+          12,
+          null
+        ],
+        [
+          1750,
+          12,
+          null
+        ],
+        [
+          1750,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        405.1,
+        502.1,
+        536.7,
+        553.1,
+        561.0
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          1000,
+          12,
+          1750
+        ],
+        [
+          1000,
+          12,
+          null
+        ],
+        [
+          1000,
+          12,
+          null
+        ],
+        [
+          1000,
+          12,
+          null
+        ],
+        [
+          1000,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        329.5,
+        301.3,
+        313.0,
+        319.1,
+        322.0
+      ],
+      "range_score": 0.0
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0007",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      66.1,
+      66.1,
+      66.1,
+      66.1,
+      66.1
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1500,
+          24,
+          2000
+        ],
+        [
+          1500,
+          24,
+          null
+        ],
+        [
+          1250,
+          24,
+          null
+        ],
+        [
+          1250,
+          24,
+          null
+        ],
+        [
+          1250,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        431.3,
+        496.9,
+        508.3,
+        534.8,
+        555.3
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          500,
+          8,
+          2000
+        ],
+        [
+          500,
+          8,
+          null
+        ],
+        [
+          500,
+          8,
+          null
+        ],
+        [
+          500,
+          8,
+          null
+        ],
+        [
+          500,
+          8,
+          null
+        ]
+      ],
+      "auc24": [
+        572.5,
+        547.9,
+        592.8,
+        631.4,
+        659.2
+      ],
+      "range_score": 0.5
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0008",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      173.1,
+      173.1,
+      173.1,
+      173.1
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1500,
+          8,
+          3000
+        ],
+        [
+          1500,
+          8,
+          null
+        ],
+        [
+          1500,
+          8,
+          null
+        ],
+        [
+          1500,
+          8,
+          null
+        ]
+      ],
+      "auc24": [
+        474.1,
+        492.7,
+        514.5,
+        531.8
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          2000,
+          12,
+          3000
+        ],
+        [
+          2000,
+          12,
+          null
+        ],
+        [
+          2000,
+          12,
+          null
+        ],
+        [
+          2000,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        411.4,
+        436.4,
+        456.9,
+        472.4
+      ],
+      "range_score": 1.0
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0009",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      45.5,
+      45.5,
+      45.5,
+      45.5
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1250,
+          24,
+          1500
+        ],
+        [
+          1250,
+          24,
+          null
+        ],
+        [
+          1250,
+          24,
+          null
+        ],
+        [
+          1250,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        414.5,
+        488.8,
+        542.6,
+        573.0
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          500,
+          12,
+          1000
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        375.3,
+        400.5,
+        439.1,
+        461.2
+      ],
+      "range_score": 1.0
+    },
+    "expert_review": "pending",
+    "ships": true
+  },
+  {
+    "task_id": "dose-vanc-0010",
+    "gates": {
+      "G1_fields_and_citations": true,
+      "G2_in_validated_range": true,
+      "G3_correct_answer_exists": true,
+      "G4_lazy_answer_fails": true,
+      "G5_q_unit_robust": true,
+      "G6_not_public_benchmark": true
+    },
+    "crcl_by_day": [
+      46.9,
+      33.5,
+      26.0,
+      23.4,
+      23.4
+    ],
+    "oracle": {
+      "plan": [
+        [
+          1250,
+          24,
+          null
+        ],
+        [
+          1000,
+          24,
+          null
+        ],
+        [
+          750,
+          24,
+          null
+        ],
+        [
+          500,
+          24,
+          null
+        ],
+        [
+          500,
+          24,
+          null
+        ]
+      ],
+      "auc24": [
+        325.8,
+        427.1,
+        476.9,
+        472.6,
+        491.4
+      ],
+      "reward": 1.0
+    },
+    "naive": {
+      "plan": [
+        [
+          500,
+          12,
+          1500
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ],
+        [
+          500,
+          12,
+          null
+        ]
+      ],
+      "auc24": [
+        479.1,
+        483.1,
+        593.8,
+        702.1,
+        789.2
+      ],
+      "range_score": 0.5
+    },
+    "expert_review": "pending",
+    "ships": true
+  }
+]
