@@ -1,0 +1,6 @@
+# Python build and cache files
+__pycache__/
+*.pyc
+.venv/
+# Local run logs (large, regenerated)
+runs/
